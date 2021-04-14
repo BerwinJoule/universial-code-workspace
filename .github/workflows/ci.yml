@@ -1,0 +1,21 @@
+name: ci latest
+on: [push]
+env:
+  # 设置 docker 镜像名
+  IMAGE_NAME: universial-code-workspace
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      # 构建镜像，指定镜像名
+      - name: Build image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
+                # 登录到 dockerhub，使用 GitHub secrets 传入账号密码，密码被加密存储在 GitHub 服务器，添加方法见下图。
+      - name: Log into registry
+        run: echo "${{ secrets.ACCESS_TOKEN }}" | docker login -u berwinjoule --password-stdin
+
+      - name: Push image
+        run: |
+          docker push $IMAGE_ID
