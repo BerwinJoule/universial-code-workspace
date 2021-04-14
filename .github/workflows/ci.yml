@@ -17,4 +17,4 @@ jobs:
         run: echo "${{ secrets.ACCESS_TOKEN }}" | docker login -u berwinjoule --password-stdin
       # 直接push
       - name: Push image
-        run: docker push $IMAGE_ID
+        run: docker push $IMAGE_ID:latest
