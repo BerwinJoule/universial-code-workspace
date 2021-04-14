@@ -1,1 +1,1 @@
-启动命令：dk run -dit --name universial-code-workspace -p 0.0.0.0:8080:8080 -v "$HOME/.config:/home/coder/.config" -v "$PWD:/home/coder" -u "$(id -u):$(id -g)" -e "DOCKER_USER=$USER" universial-code-workspace:lasted
+启动命令：dk run -dit --name universial-code-workspace -p 0.0.0.0:8080:8080 -v "$PWD/.config:/home/coder/.config" -v "$PWD:/home/coder/project" -v "$PWD/.local:/home/coder/.local" -v "$HOME/.ssh:/home/coder/.ssh" -v "$HOME/.gitconfig:/home/coder/.gitconfig" -u "$(id -u):$(id -g)" -e "DOCKER_USER=$USER" berwinjoule/universial-code-workspace
