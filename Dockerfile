@@ -4,4 +4,4 @@ RUN sudo apt-get update \
     android-tools-adb \
     zsh
 # install oh-my-zsh
-RUN export RUNZSH=yes && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && chsh -s /bin/zsh
+RUN export RUNZSH=yes && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && sudo chsh -s /bin/zsh
